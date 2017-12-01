@@ -1,0 +1,20 @@
+{
+  "name": "generandtor",
+  "version": "1.0.0",
+  "description": "Generate random data suitable for any testing purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "random",
+    "word",
+    "dictionary",
+    "name",
+    "country",
+    "lorem",
+    "ipsum"
+  ],
+  "author": "Roman Melnyk <email.rom.melnyk@gmail.com>",
+  "license": "ISC"
+}
