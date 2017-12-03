@@ -27,15 +27,32 @@ function promisify(asyncFunction, { context = null, multipleParams = false } = {
 
 
 /**
- * @param {Array|String|Number} source
- * @return {Number|*}
+ * @param {Number} [from=0]
+ * @param {Number} [to]
+ * @return {Number}
  */
-function random(source) {
-    const hasElements = Array.isArray(source) || typeof source === 'string';
-    const max = hasElements ? source.length : source;
-    const number = Math.floor(Math.random() * max);
-    return hasElements ? source[number] : number;
+function randomNumber(from = 0, to) {
+    if (to === undefined) {
+        to = from;
+        from = 0;
+    }
+    const delta = to - from;
+    return Math.floor(Math.random() * delta) + from;
 }
 
 
-module.exports = { promisify, random };
+/**
+ * @param {Array|String} source
+ * @return {String|*}
+ */
+function randomValue(source) {
+    if (!source || !source.length) {
+        return '';
+    }
+
+    const index = Math.floor(Math.random() * source.length);
+    return source[index];
+}
+
+
+module.exports = { promisify, randomNumber, randomValue };

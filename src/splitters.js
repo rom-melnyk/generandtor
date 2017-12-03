@@ -1,5 +1,5 @@
 const WORD_DELIMITER = /[\s\n]+/;
-const LINE_DELIMITER = /(\s*\n+\s*)+/;
+const LINE_DELIMITER = /\s*\n+\s*/;
 
 
 function splitWords(input) {
